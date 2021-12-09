@@ -1,0 +1,35 @@
+<app-header></app-header>
+<mat-card>
+  <form class="form" [formGroup]="LoginForm">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <div class="example-container">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="User Name" formControlName="user_name" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Password"
+          formControlName="password"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button (click)="login()">Login</button>
+      <button mat-raised-button (click)="register()">Register</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

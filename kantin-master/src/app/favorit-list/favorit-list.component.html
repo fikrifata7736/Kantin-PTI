@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div>
+  <h3 style="text-align: center;">Jajanan Favorite</h3>
+  <div *ngIf="loadedKantin.length == 0">
+    <table class="table table-hover table-striped">
+      <p style="text-align: center">Anda belum ada favorit.</p>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div *ngIf="loadedKantin.length != 0">
+    <tr *ngFor="let favorit of loadedKantin">
+      <td>{{ favorit.nama }}</td>
+      <td>
+        <img
+          src="{{ favorit.foto }}"
+          class="img-thumbnail"
+          alt="Foto Jajanan"
+        />
+      </td>
+      <td>{{ favorit.deskripsi }}</td>
+      <td>{{ favorit.kategori }}</td>
+    </tr>
+  </div>
+</div>

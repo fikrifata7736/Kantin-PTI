@@ -1,0 +1,59 @@
+<app-header></app-header>
+<mat-card>
+    <form class="form" [formGroup]="EditProfileForm">
+      <mat-card-header>
+        <mat-card-title style="text-align: center;">Register</mat-card-title>
+      </mat-card-header>
+      <div class="example-container">
+  
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            placeholder="Password"
+            formControlName="password"
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            placeholder="Nama Lengkap"
+            formControlName="nama_lengkap"
+          />
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Alamat" formControlName="alamat" />
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <input
+            [matDatepicker]="picker"
+            matInput
+            placeholder="Tanggal Lahir"
+            formControlName="tanggal_lahir"
+          />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Foto (url)" formControlName="foto" />
+        </mat-form-field>
+      </div>
+      <mat-card-actions>
+        <button mat-raised-button (click)="edit()">Edit</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+

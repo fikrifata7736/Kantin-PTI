@@ -1,0 +1,46 @@
+<nav id="header" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" >
+    <img
+      src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/5d75f3f4ec22d31c304a8689149d7bc5/474fd71a-f95b-43be-8af8-6f28b9e3a0c3_rw_1200.jpg?h=de070bc8b98c599e7ba69bae5608a35d"
+      width="50px"
+      height="50px"
+      class="d-inline-block align-top"
+      alt="Image Logo"
+    />
+    KANTIN
+  </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link " routerLink="/jajanan">Jajanan List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " routerLink="/favorit">Favorite List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " routerLink="/profil">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " routerLink="/user-profile">User</a>
+      </li>
+    </ul>
+    <!-- <form class="form-inline">
+            <input class="form-control mr-sm-2" name="cari" placeholder="Cari Jajanan">
+            <button class="btn btn-success my-2 my-sm-0">GAS</button>
+        </form> -->
+    <button
+      *ngIf="this.token == null"
+      (click)="login()"
+      class="btn btn-success "
+    >
+      Sign in
+    </button>
+    <button
+      *ngIf="this.token != null"
+      (click)="logout()"
+      class="btn btn-danger"
+    >
+      Sign Out
+    </button>
+  </div>
+</nav>

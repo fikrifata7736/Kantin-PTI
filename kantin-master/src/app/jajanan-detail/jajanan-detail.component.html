@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div>
+  <h3 style="text-align: center;">Detail Jajanan</h3>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nama</th>
+        <th scope="col">Foto</th>
+        <th scope="col">Deskripsi</th>
+        <th scope="col">Kategori</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ _detailJajan.result.nama }}</td>
+        <td>
+          <img
+            src="{{ _detailJajan.result.foto }}"
+            class="img-thumbnail"
+            alt="Foto Jajanan"
+          />
+        </td>
+        <td>{{ _detailJajan.result.deskripsi }}</td>
+        <td>{{ _detailJajan.result.kategori }}</td>
+      </tr>
+    </tbody>
+    <button mat-raised-button (click)="addFavorit(_detailJajan.result)">Favorite</button>
+  </table>
+</div>
